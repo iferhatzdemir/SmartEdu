@@ -1,7 +1,7 @@
 //Moduls
-
+const ejs = require('ejs');
 const express = require('express');
-
+const pageRoute = require('./routes/pageRoutes');
 const app = express();
 
 //Server
@@ -10,11 +10,10 @@ app.listen(port, () => {
   console.log(`App listening at http://localhost:${port}`);
 });
 
+//Template Engine
+app.set('view engine', 'ejs');
 //Middleware
 app.use(express.static('public'));
 
 //Routers
-
-app.get('/', (req, res) => {
-  res.status(200).send('Hello World!');
-});
+app.use('/', pageRoute);
