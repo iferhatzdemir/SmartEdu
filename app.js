@@ -14,7 +14,7 @@ app.listen(port, () => {
 
 //DB Connection
 mongoose
-  .connect('mongodb://localhost:27017/smartedu')
+  .connect('mongodb://localhost:27017/Testsmartedu')
   .then(() => {
     console.log('DB Connected');
   })
@@ -26,7 +26,8 @@ mongoose
 app.set('view engine', 'ejs');
 //Middleware
 app.use(express.static('public'));
-
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }))
 //Routers
 app.use('/', pageRoute);
 app.use('/courses', courseRoute);

@@ -14,10 +14,10 @@ const courseSchema = new Schema({
     required: true,
     trim: true, //boşlukları siler
   },
-  image: {
-    type: String,
-    required: true,
-  },
+  // image: {
+  //   type: String,
+  //   required: true,
+  // },
   date: {
     type: Date,
     default: Date.now,

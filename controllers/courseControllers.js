@@ -15,6 +15,7 @@ exports.createCourse = async (req, res) => {
       },
     });
   } catch (err) {
+
     //hata yakalama işlemi
     res.status(400).json({
       //400 status kodu ile hata olduğunu gösteriyoruz.
